@@ -33,7 +33,7 @@ const Banner = () => {
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
             >
-                <div className="w-full flex justify-center items-center flex-col py-52">
+                <div className="w-full flex justify-center items-center flex-col py-16 lg:py-52">
                     <img className='w-[100px] h-[100px] rounded-full mx-auto' src={user} alt="avatar" />
                     <div className='lg:w-1/2'>
                         <div className='text-center font-bodoni text-xs'>
@@ -52,8 +52,8 @@ const Banner = () => {
                             repeat={Infinity}
                             />
                         </div>
-                        <h1 className='text-8xl text-center font-abril mt-10'>Building the web, one pixel at a time</h1>
-                        <div className='flex justify-center gap-5 mt-16'>
+                        <h1 className='lg:text-8xl text-6xl text-center font-abril mt-10'>Building the web, one pixel at a time</h1>
+                        <div className='flex flex-col lg:flex-row justify-center items-center gap-5 mt-16'>
                             <Link to='contact' smooth={true} duration={1500}><button className='w-52 border text-xl font-bodoni border-dark2 rounded-md py-2 hover:bg-dark2 hover:text-dark1'>Contact me</button></Link>
                             <button className='w-52 border text-xl font-bodoni border-dark2 rounded-md py-2 hover:bg-dark2 hover:text-dark1' onClick={handleDownload}>My Resume</button>
                         </div>

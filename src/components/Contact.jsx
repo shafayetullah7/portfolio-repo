@@ -51,7 +51,7 @@ const Contact = () => {
     
 
     return (
-        <div className='overflow-hidden'>
+        <div className='overflow-hidden w-full'>
             <h1
                 data-aos="fade-down"
                 data-aos-offset="-300"
@@ -66,7 +66,7 @@ const Contact = () => {
                 Contact me
             </h1>
 
-            <div className='flex flex-col lg:flex-row justify-around items-center font-bodoni'>
+            <div className='flex flex-col lg:flex-row justify-around items-center font-bodoni w-full overflow-hidden'>
                 <div className='w-full'
                 data-aos="fade-right"
                 data-aos-offset="-300"
