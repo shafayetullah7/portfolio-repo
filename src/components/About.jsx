@@ -30,7 +30,7 @@ const About = () => {
                         </div>
                     </div>
                     <div className="w-full text-justify duration-200 lg:pr-24 font-bodoni">
-                        {!more && <p>Hello! I'm Shafayet Ullah, a passionate web developer and student at XYZ University. With a strong foundation in the MERN (MongoDB, Express.js, React, Node.js) stack, I'm dedicated to creating exceptional web experiences that combine aesthetics and functionality.</p>}
+                        {!more && <p>Hello! I'm Shafayet Ullah, a passionate web developer and student at Daffodil International University. With a strong foundation in the MERN (MongoDB, Express.js, React, Node.js) stack, I'm dedicated to creating exceptional web experiences that combine aesthetics and functionality.</p>}
                         {more && <div>
                             <p>Hello! I'm Shafayet Ullah, a passionate web developer and student at XYZ University. With a strong foundation in the MERN (MongoDB, Express.js, React, Node.js) stack, I'm dedicated to creating exceptional web experiences that combine aesthetics and functionality.</p><br />
                             <p>In the rapidly evolving world of web development, I understand the importance of staying up-to-date with the latest trends and technologies. I am passionate about continuous learning and actively seek out opportunities to expand my skill set. Whether it's attending industry conferences, participating in coding challenges, or exploring new frameworks and tools, I am dedicated to keeping my skills sharp and embracing new possibilities.</p><br />

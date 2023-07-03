@@ -40,7 +40,7 @@ const Banner = () => {
                             sequence={[
                                 // Same substring at the start will only be typed out once, initially
                                 'Hi, I’m Shafayet',
-                                2000, // wait 1s before replacing "Mice" with "Hamsters"
+                                3000, // wait 1s before replacing "Mice" with "Hamsters"
                                 'I’m a Web Developer',
                                 1000,
                                 'Explore my portfolio',

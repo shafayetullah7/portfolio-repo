@@ -1,9 +1,10 @@
 import resume from '../assets/Resume-of-Shafayet.pdf'
+import { Link } from 'react-scroll';
 
 const Nav = () => {
     const navItems = <>
-        <li><a>Item 1</a></li>
-        <li><a>Item 3</a></li>
+        <li className='cursor-pointer hover:font-bold'><Link to='about' smooth={true} duration={'1000'}>About</Link></li>
+        <li className='cursor-pointer hover:font-bold'><Link to='services' smooth={true} duration={'1000'}>Services</Link></li>
     </>
 
     const handleDownload = () => {

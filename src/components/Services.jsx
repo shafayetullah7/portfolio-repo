@@ -87,7 +87,7 @@ const Services = () => {
                         >
                             {service.icon && <img className="w-16 h-16 mx-auto object-cover object-center" src={service.icon}/>}
                             <h1 className="text-3xl font-abril text-center mt-4">{service.title}</h1>
-                            <p className="font-bodoni text-justify p-5 absolute inset-0 bg-gray-300 text-dark1 opacity-0 hover:opacity-100 duration-150">{service.description}</p>
+                            {/* <p className="font-bodoni text-justify p-5 absolute inset-0 bg-gray-300 text-dark1 opacity-0 hover:opacity-100 duration-150">{service.description}</p> */}
                         </div>
                     </div>
                 </div>)}
