@@ -2,12 +2,13 @@ import { useState } from 'react';
 import { HiOutlineMail, HiOutlinePhone, HiOutlineChatAlt } from 'react-icons/hi';
 import Lottie from "lottie-react";
 import contactAnimation from "../assets/contactAnimation.json";
+import { BsFillSendFill } from "react-icons/bs";
 
 const Contact = () => {
     const [email, setEmail] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
-    const [emailError, setEmailError] = useState('');
+    const [error, setError] = useState('');
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
@@ -21,11 +22,18 @@ const Contact = () => {
         setMessage(e.target.value);
     };
 
+    const validateEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    };
     const handleSend = (e) => {
         e.preventDefault();
         if (!validateEmail(email)) {
-        setEmailError('Please enter a valid email address.');
+        setError('Please enter a valid email address.');
         return;
+        }
+        if(!email || !subject || !message){
+            setError('All fields must be filled');
         }
 
         // Send the data or perform any desired actions
@@ -37,16 +45,13 @@ const Contact = () => {
         setEmail('');
         setSubject('');
         setMessage('');
-        setEmailError('');
+        setError('');
     };
 
-    const validateEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    };
+    
 
     return (
-        <div className='overflow-hidden py-24'>
+        <div className='overflow-hidden'>
             <h1
                 data-aos="fade-down"
                 data-aos-offset="-300"
@@ -56,16 +61,34 @@ const Contact = () => {
                 data-aos-mirror="true"
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
-                className="text-6xl font-abril text-center"
+                className="text-6xl font-abril text-center relative top-16"
             >
                 Contact me
             </h1>
 
-            <div className='flex flex-col lg:flex-row justify-around items-center'>
-                <div className='w-full'>
+            <div className='flex flex-col lg:flex-row justify-around items-center font-bodoni'>
+                <div className='w-full'
+                data-aos="fade-right"
+                data-aos-offset="-300"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center"
+                >
                     <Lottie animationData={contactAnimation} loop={true} />;
                 </div>
-                <div className='w-full'>
+                <div className='w-full'
+                data-aos="fade-left"
+                data-aos-offset="-300"
+                data-aos-delay="50"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center"
+                >
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         <div className="flex flex-col gap-3 text-dark2 items-center  p-4 rounded-md">
                             <HiOutlinePhone className="text-6xl mx-auto" />
@@ -83,50 +106,22 @@ const Contact = () => {
 
                     <form className="p-6 rounded-lg">
                         <div className="mb-4">
-                        <label htmlFor="email" className="block mb-2">
-                            Email
-                        </label>
-                        <input
-                            type="text"
-                            id="email"
-                            className="w-full px-3 py-2 rounded-md"
-                            value={email}
-                            onChange={handleEmailChange}
-                        />
-                        {emailError && <p className="text-red-500 mt-1">{emailError}</p>}
+                            <label htmlFor="email" className="block">Email</label>
+                            <input type="email" id="email" className="w-full px-3 py-2 rounded-md bg-opacity-10 bg-white outline-none focus:border-dark2 focus:border-2" placeholder='Enter your email' value={email} onChange={handleEmailChange}/>
                         </div>
 
                         <div className="mb-4">
-                        <label htmlFor="subject" className="block mb-2">
-                            Subject
-                        </label>
-                        <input
-                            type="text"
-                            id="subject"
-                            className="w-full px-3 py-2 rounded-md"
-                            value={subject}
-                            onChange={handleSubjectChange}
-                        />
+                            <label htmlFor="subject" className="block">Subject</label>
+                            <input type="text" id="subject" className="w-full px-3 py-2 rounded-md bg-opacity-10 bg-white outline-none focus:border-dark2 focus:border-2" placeholder='Enter subject of your message' value={subject} onChange={handleSubjectChange}/>
                         </div>
 
                         <div className="mb-4">
-                        <label htmlFor="message" className="block mb-2">
-                            Message
-                        </label>
-                        <textarea
-                            id="message"
-                            className="w-full px-3 py-2 rounded-md"
-                            value={message}
-                            onChange={handleMessageChange}
-                        />
+                            <label htmlFor="message" className="block">Message</label>
+                            <textarea id="message" className="w-full px-3 py-2 h-28 rounded-md bg-opacity-10 bg-white outline-none focus:border-dark2 focus:border-2" placeholder='Enter your message' value={message} onChange={handleMessageChange}/>
                         </div>
 
-                        <button
-                        className="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md"
-                        onClick={handleSend}
-                        >
-                        Send
-                        </button>
+                        {error && <p className="text-red-500 mt-1 text-xs">{error}</p>}
+                        <button className="bg-dark2 hover:bg-gray-600 text-dark1 hover:text-white px-4 py-2 rounded-md mt-1 w-fit flex items-center gap-2 font-abril" onClick={handleSend}><BsFillSendFill></BsFillSendFill>Send</button>
                     </form>
                 </div>
             </div>

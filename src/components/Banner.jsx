@@ -3,6 +3,7 @@ import { TypeAnimation } from 'react-type-animation';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import resume from '../assets/Resume-of-Shafayet.pdf'
+import { Link } from 'react-scroll';
 
 const Banner = () => {
     
@@ -53,7 +54,7 @@ const Banner = () => {
                         </div>
                         <h1 className='text-8xl text-center font-abril mt-10'>Building the web, one pixel at a time</h1>
                         <div className='flex justify-center gap-5 mt-16'>
-                            <button className='w-52 border text-xl font-bodoni border-dark2 rounded-md py-2 hover:bg-dark2 hover:text-dark1'>Contact me</button>
+                            <Link to='contact' smooth={true} duration={1500}><button className='w-52 border text-xl font-bodoni border-dark2 rounded-md py-2 hover:bg-dark2 hover:text-dark1'>Contact me</button></Link>
                             <button className='w-52 border text-xl font-bodoni border-dark2 rounded-md py-2 hover:bg-dark2 hover:text-dark1' onClick={handleDownload}>My Resume</button>
                         </div>
                     </div>

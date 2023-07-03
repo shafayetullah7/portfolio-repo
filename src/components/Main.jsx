@@ -23,7 +23,7 @@ const Main = () => {
             <div>
                 <Techs></Techs>
             </div>
-            <div>
+            <div id="contact">
                 <Contact></Contact>
             </div>
         </div>
