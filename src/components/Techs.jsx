@@ -25,11 +25,30 @@ const Techs = () => {
         {tech:'React',icon:react}
     ]
     return (
-        <div className='py-32'>
-            <h1 className='text-6xl font-abril text-dark2 text-center'>Skills</h1>
-            <div className='mt-20'>
+        <div className='py-32 overflow-hidden'>
+            <h1
+            data-aos="fade-down"
+            data-aos-offset="-300"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+            className='text-6xl font-abril text-dark2 text-center'
+            >Skills</h1>
+            <div 
+            data-aos="zoom-in"
+            data-aos-offset="-300"
+            data-aos-delay="50"
+            data-aos-duration="1000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false"
+            data-aos-anchor-placement="top-center"
+            className='mt-20'>
                 <Marquee>
-                    {techs.map((tech,idx)=><div className='w-[250px] h-[200px] mx-24 border border-dark2 rounded-lg p-5' key={idx}>
+                    {techs.map((tech,idx)=><div className='w-[250px] h-[200px] mx-20 border border-dark2 rounded-lg p-5' key={idx}>
                         <img className='w-[100px] mx-auto' src={tech.icon} alt={tech.tech} />
                         <h2 className='font-abril text-2xl text-center'>{tech.tech}</h2>
                     </div>)}

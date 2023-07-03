@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 
 const Nav = () => {
     const navItems = <>
+        <li className='cursor-pointer hover:font-bold'><Link to='home' smooth={true} duration={'1000'}>Home</Link></li>
         <li className='cursor-pointer hover:font-bold'><Link to='about' smooth={true} duration={'1000'}>About</Link></li>
         <li className='cursor-pointer hover:font-bold'><Link to='services' smooth={true} duration={'1000'}>Services</Link></li>
     </>

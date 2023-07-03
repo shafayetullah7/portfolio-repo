@@ -58,11 +58,11 @@ const Services = () => {
                 data-aos-mirror="true"
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
-                className="text-7xl font-abril text-center"
+                className="text-6xl font-abril text-center"
             >
                 Services
             </h1>
-            <div className="grid md:grid-cols-3 justify-items-center gap-10 mt-16">
+            <div className="grid md:grid-cols-3 grid-cols-1 justify-items-center gap-10 mt-16">
                 {services.map((service,idx)=><div key={idx}
                     data-aos="fade-up"
                     data-aos-offset="-300"

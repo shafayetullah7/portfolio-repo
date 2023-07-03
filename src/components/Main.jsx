@@ -1,5 +1,6 @@
 import About from "./About";
 import Banner from "./Banner";
+import Contact from "./Contact";
 import Nav from "./Nav";
 import Services from "./Services";
 import Techs from "./Techs";
@@ -7,7 +8,9 @@ import Techs from "./Techs";
 const Main = () => {
     return (
         <div className="text-dark2">
-            <Nav></Nav>
+            <div id="home">
+                <Nav></Nav>
+            </div>
             <Banner></Banner>
             <div className="bg-dark1 text-gray-200 lg:py-24">
                 <div id="about">
@@ -19,6 +22,9 @@ const Main = () => {
             </div>
             <div>
                 <Techs></Techs>
+            </div>
+            <div>
+                <Contact></Contact>
             </div>
         </div>
     );
