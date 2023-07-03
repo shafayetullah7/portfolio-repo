@@ -22,8 +22,8 @@ const About = () => {
             >
                 <div className="bg-dark1 flex items-center mt-24 py-24 text-gray-200">
                     <div className="w-full">
-                        <h1 className="text-5xl font-abril text-center">About me</h1>
-                        <div className="w-fit mx-auto flex gap-5 text-3xl mt-5">
+                        <h1 className="text-6xl font-abril text-center">About me</h1>
+                        <div className="w-fit mx-auto flex gap-5 text-4xl mt-5">
                             <AiFillFacebook></AiFillFacebook>
                             <AiFillLinkedin></AiFillLinkedin>
                             <AiOutlineGithub></AiOutlineGithub>
