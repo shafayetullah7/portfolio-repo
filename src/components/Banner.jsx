@@ -4,6 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import resume from '../assets/Resume-of-Shafayet.pdf'
 import { Link } from 'react-scroll';
+import iam from '../assets/iam.jpg'
 
 const Banner = () => {
     
@@ -33,8 +34,8 @@ const Banner = () => {
                 data-aos-once="false"
                 data-aos-anchor-placement="top-center"
             >
-                <div className="w-full flex justify-center items-center flex-col py-16 lg:py-52">
-                    <img className='w-[100px] h-[100px] rounded-full mx-auto' src={user} alt="avatar" />
+                <div className="w-full flex justify-center items-center flex-col py-16 lg:py-44">
+                    <img className='w-[150px] h-[150px] rounded-full mx-auto' src={iam} alt="avatar" />
                     <div className='lg:w-1/2'>
                         <div className='text-center font-bodoni text-xs'>
                             <TypeAnimation

@@ -1,3 +1,13 @@
+import { useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+
+import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { Fade, Zoom } from "react-awesome-reveal";
 
 const Projects = () => {
     const projects = [
@@ -38,7 +48,7 @@ const Projects = () => {
         },
         {
             name:'Savory Mediterranean',
-            description:'',
+            description:'Explore different Mediterranean Cuisine of different chefs. Learn yourself and make yourself Mediterranean Cuisine from reciepes of different chefs.',
             images:[
                 'https://i.postimg.cc/5y0Bdctn/savory1.png',
                 'https://i.postimg.cc/kGpx7j69/savory2.png',
@@ -51,6 +61,8 @@ const Projects = () => {
             server:'https://github.com/shafayetullah7/savory-mediterranean-server-repo.git'
         }
     ]
+
+    const [current,setCurrent] = useState();
     return (
         <div className="overflow-hidden py-24 lg:px-24 lg:mt-24">
             <h1
@@ -92,22 +104,52 @@ const Projects = () => {
                             {project.images && <img className="w-full h-[150px] mx-auto object-cover object-center" src={project.images[project.images.length-1]}/>}
                             <div className="flex justify-between items-center mt-4">
                             <h1 className="text-3xl font-abril text-center">{project.name}</h1>
-                            <a href={project.live} rel="" target="_blank"><button className="font-bodoni w-fit px-3 py-2 rounded-lg border border-dark2 text-xs">Details</button></a>
+                            <button className="font-bodoni w-fit px-3 py-2 rounded-lg border border-dark2 text-xs" onClick={()=>setCurrent(project)}>Details</button>
+                            {/* <a href={project.live} rel="" target="_blank"><button className="font-bodoni w-fit px-3 py-2 rounded-lg border border-dark2 text-xs">Details</button></a> */}
                             </div>
                             {/* <p className="font-bodoni text-justify p-5 absolute inset-0 bg-gray-300 text-dark1 opacity-0 hover:opacity-100 duration-150">{service.description}</p> */}
                         </div>
                     </div>
                 </div>)}
             </div>
-            {/* You can open the modal using ID.showModal() method */}
-            {/* <button className="btn" onClick={()=>window.my_modal_3.showModal()}>open modal</button>
-            <dialog id="my_modal_3" className="modal ">
-            <form method="dialog" className="modal-box">
-                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                <h3 className="font-bold text-lg">Hello!</h3>
-                <p className="py-4">Press ESC key or click on ✕ button to close</p>
-            </form>
-            </dialog> */}
+
+            {current && <><Zoom>
+                <div className="lg:w-2/3 px-2 lg:px-0 mx-auto mt-10">
+                    <Swiper
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                        }}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        navigation={true}
+                        modules={[Autoplay, Pagination, Navigation]}
+                        className="mySwiper"
+                    >
+                        {current?.images?.map((image,idx)=><SwiperSlide key={idx}>
+                            <img className="lg:h-[350px] h-[200px] w-full object-cover object-center rounded-xl" src={image} alt="image" />
+                        </SwiperSlide>)}
+                        {/* <SwiperSlide>Slide 1</SwiperSlide>
+                        <SwiperSlide>Slide 2</SwiperSlide>
+                        <SwiperSlide>Slide 3</SwiperSlide>
+                        <SwiperSlide>Slide 4</SwiperSlide>
+                        <SwiperSlide>Slide 5</SwiperSlide> */}
+                    </Swiper>
+                    <div className="mt-5 font-bodoni">
+                        <h1 className="font-bold text-2xl">{current.name}</h1>
+                        <p className=" text-justify mt-2">{current.description}</p>
+                        <div className="mt-7 flex flex-col lg:flex-row lg:gap-10 gap-4">
+                            <a href={current.live} target="_blank" rel="noreferrer" className="w-[200px] border border-dark2 rounded-lg py-2 font-bold block text-center cursor-pointer hover:bg-dark2 hover:text-dark1">Live site</a>
+                            <a href={current.client} target="_blank" rel="noreferrer" className="w-[200px] border border-dark2 rounded-lg py-2 font-bold block text-center cursor-pointer hover:bg-dark2 hover:text-dark1">Client side github</a>
+                            <a href={current.server} target="_blank" rel="noreferrer" className="w-[200px] border border-dark2 rounded-lg py-2 font-bold block text-center cursor-pointer hover:bg-dark2 hover:text-dark1">Server side github</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </Zoom></>}
         </div>
     );
 };
